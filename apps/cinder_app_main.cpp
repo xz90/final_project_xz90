@@ -8,8 +8,8 @@ using myapp::MyApp;
 
 void prepareSettings(MyApp::Settings* settings) {
 //    settings->setResizable(false);
-    settings->setWindowSize( 1600, 1200 );
-    settings->setFrameRate( 60.0f );
+    settings->setWindowSize( 900, 1100 );
+    settings->setFrameRate( 30.0f );
 }
 
 

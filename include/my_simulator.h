@@ -13,16 +13,28 @@
 #include "cinder/gl/gl.h"
 #include "my_controller.h"
 #include "CinderOpenCV.h"
+#include "cinder/app/App.h"
+#include "cinder/ImageIO.h"
+#include "cinder/gl/Texture.h"
+#include "cinder/Perlin.h"
+#include "cinder/Channel.h"
+#include "cinder/Vector.h"
+#include "cinder/Utilities.h"
+#include "../include/my_controller.h"
+#include <sstream>
+#define RESOLUTION 10
+#define NUM_PARTICLES_TO_SPAWN 15
+
 
 using namespace ci;
 using namespace ci::app;
-
+using std::stringstream;
 
 namespace myapp {
 
 class MyApp : public ci::app::App{
 public:
-    MyApp();
+//    MyApp();
 
     void draw() override;
     void update() override;
@@ -34,13 +46,36 @@ public:
      * @param event "wasd" for accelerates in four directions,
      * and "up down" arrows to speed up or slow down
      */
-    void keyDown(cinder::app::KeyEvent event);
+    void keyDown(KeyEvent event);
+    void mouseDown( MouseEvent event );
+    void mouseUp( MouseEvent event );
+    void mouseMove( MouseEvent event );
+    void mouseDrag( MouseEvent event );
 
-    const int kWindowSize = 2000;
-
-    gl::Texture2dRef myImage;
 
 
+
+//    const int kWindowSize = 2000;
+
+
+    Perlin mPerlin;
+
+    Channel32f mChannel;
+    gl::Texture2dRef mTexture;
+
+    vec2 mMouseLoc;
+    vec2 mMouseVel;
+    bool mIsPressed;
+
+    ParticleController mParticleController;
+
+    bool mDrawParticles;
+    bool mDrawImage;
+    bool mSaveFrames;
+    bool mCentralGravity;
+    bool mAllowPerlin;
+
+    int mSaveFrameCount;
     };
 
 } // namespace myapp

@@ -21,8 +21,8 @@ Particle::Particle( vec2 loc, vec2 vel )
     mAcc			= vec2(0,0);
 
     mDecay			= Rand::randFloat( 0.95f, 0.951f );
-    mRadius			= 3.0f + Rand::randFloat( 0.1 );
-    mRadiusDest		= 3.0f;
+    mRadius			= 5.0f + Rand::randFloat( 0.2f );
+    mRadiusDest		= 5.0f;
     mMass			= mRadius * mRadius * 0.0001f + 0.01f;
     mScale			= 3.0f;
     mAge			= 0;
@@ -51,7 +51,7 @@ void Particle::update( const Channel32f &channel, const vec2 &mouseLoc )
 {
     mVel += mAcc;
 
-    float maxVel = mRadius + 0.0025f;
+    float maxVel = mRadius + 0.025f;
 
     float velLength = mVel[0]*mVel[0]+mVel[1]*mVel[1] + 0.1f;
     if( velLength > maxVel*maxVel ){

@@ -1,7 +1,7 @@
 //
 // Created by Owenz on 4/19/2021.
 //
-#pragma warning( disable : 4819 )
+#pragma warning( disable : 4819 4305)
 #pragma once
 
 
