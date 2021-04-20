@@ -4,14 +4,28 @@
 #pragma warning( disable : 4819 )
 #pragma once
 
-
-#include "cinder\gl\gl.h"
 #ifndef FINAL_PROJECT_XZ90_MY_CONTROLLER_H
 #define FINAL_PROJECT_XZ90_MY_CONTROLLER_H
 
-namespace myapp{
-    class my_controller {
+#include "cinder\gl\gl.h"
+#include "cinder/Channel.h"
+#include "../include/my_particle.h"
+#include "cinder/Perlin.h"
+#include <list>
 
+namespace myapp{
+    class ParticleController {
+    public:
+        ParticleController();
+        void repulseParticles();
+        void pullToCenter();
+        void applyPerlin( const ci::Perlin &perlin );
+        void update( const ci::Channel32f &channel, const vec2 &mouseLoc );
+        void draw();
+        void addParticles( int amt, const vec2 &mouseLoc, const vec2 &mouseVel );
+        void removeParticles( int amt );
+
+        std::list<Particle>	mParticles;
     };
 
 
