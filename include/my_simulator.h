@@ -1,7 +1,7 @@
 //
 // Created by Owenz on 4/19/2021.
 //
-#pragma warning( disable : 4819 )
+#pragma warning( disable : 4819 4244)
 #pragma once
 
 
@@ -12,7 +12,10 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "my_controller.h"
-#include "CinderOpenCv.h"
+#include "CinderOpenCV.h"
+
+using namespace ci;
+using namespace ci::app;
 
 
 namespace myapp {
@@ -34,6 +37,8 @@ public:
     void keyDown(cinder::app::KeyEvent event);
 
     const int kWindowSize = 2000;
+
+    gl::Texture2dRef myImage;
 
 
     };
