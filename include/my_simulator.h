@@ -12,7 +12,7 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "my_controller.h"
-#include "CinderOpenCV.h"
+#include "C:\Download\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h"
 #include "cinder/app/App.h"
 #include "cinder/ImageIO.h"
 #include "cinder/gl/Texture.h"
@@ -36,16 +36,12 @@ class MyApp : public ci::app::App{
 public:
 //    MyApp();
 
+
     void draw() override;
     void update() override;
     void setup() override;
 
-    /**
-     * To take the input of keyboard and make some addition
-     * in particles' position and velocity
-     * @param event "wasd" for accelerates in four directions,
-     * and "up down" arrows to speed up or slow down
-     */
+
     void keyDown(KeyEvent event);
     void mouseDown( MouseEvent event );
     void mouseUp( MouseEvent event );

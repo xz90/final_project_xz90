@@ -7,13 +7,14 @@
 
 using myapp::Particle;
 
-//TEST_CASE("Particle constructor") {
-//    SECTION("Default constructor") {
-//        Particle sample;
-//        REQUIRE();
-//    }
-//    SECTION("Customized constructor") {
-//        Particle first;
-//        REQUIRE(first == second);
-//    }
-//}
+TEST_CASE("Particle constructor") {
+    SECTION("Default constructor") {
+        Particle sample;
+        SUCCEED();
+    }
+    SECTION("Customized constructor") {
+        Particle sample1(vec2(1,2),vec2(2,2));
+        REQUIRE(sample1.mVel == vec2(2,2));
+        REQUIRE(sample1.mLoc == vec2(1,2));
+    }
+}
