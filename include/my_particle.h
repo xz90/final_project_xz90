@@ -20,26 +20,55 @@ using glm::vec2;
 namespace myapp{
     class Particle {
     public:
+        /**
+         * Customized particle constructor without location and velocity values
+         */
         Particle();
+
+        /**
+         * Default particle constructor
+         * first vec2: location vector
+         * second vec2: velocity vector
+         */
         Particle( vec2 , vec2 );
+
+        /**
+         * pull the particle to center by changing its velocity
+         */
         void pullToCenter();
+
+        /**
+         * add perlin noise for particles
+         * @param perlin the original perlin class
+         */
         void applyPerlin( const ci::Perlin &perlin );
+
+        /**
+         * update the situation of particles
+         * @param channel pass the image to particles
+         * @param mouseLoc the vector of mouse location
+         */
         void update( const ci::Channel32f &channel, const vec2 &mouseLoc );
+
+        /**
+         * draw a single particle
+         */
         void draw();
 
         vec2 mLoc;
         vec2 mVel;
         vec2 mAcc;
 
-        float		mDecay;
-        float		mRadius, mRadiusDest;
-        float		mScale;
+        // variables to change the size, mass and velocity of a particle
+        float mDecay;
+        float mRadius, mRadiusDest;
+        float mScale;
+        float mMass;
 
-        float		mMass;
-
-        int			mAge;
-        int			mLifespan;
-        bool		mIsDead;
+        // not in use so far
+        int	mAge;
+        int	mLifespan;
+        bool mIsDead;
     };
 
 
