@@ -4,9 +4,25 @@ Fill this in before the final project deadline. Someone who has _no familiarity_
 
 
 1. **Week1 Log** (Time zone: UTC +8)
-   1. 4.16 Fri: Find tutorials & Check cmake tutorials
-   1. 4.17 Sat: Rest
-   1. 4.18 Sun: Create project files and trying to set up environment
-   1. 4.19 Mon: Setting up the environment & get Cmake file working
-   1. 4.20 Tue: Follow the tutorial make particles visualisation
-   1. 4.21 Wed: Follow the tutorial make particles visualisation
+   
+   *4.16 Fri:* 
+      1. Find tutorials and references
+      1. Check cmake tutorials
+   
+   *4.17 Sat:*
+   1. Rest
+
+   *4.18 Sun:*
+   1. Create project files
+   1. Set up environment
+
+   *4.19 Mon:*
+   1. Set up environment
+   1. Get Cmake file working
+   1. Follow the tutorial make particles visualisation
+
+   *4.20 Tue:*
+   1. Follow the tutorial make particles visualisation
+
+   *4.21 Wed:*
+   1. Follow the tutorial make particles visualisation
