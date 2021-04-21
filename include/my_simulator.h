@@ -51,9 +51,6 @@ public:
 
 
 
-//    const int kWindowSize = 2000;
-
-
     Perlin mPerlin;
 
     Channel32f mChannel;
