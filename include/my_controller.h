@@ -27,6 +27,8 @@ namespace myapp{
         void removeParticles( int amt );
 
         std::list<Particle>	mParticles;
+
+        void disappear();
     };
 
 

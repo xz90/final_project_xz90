@@ -35,6 +35,7 @@ namespace myapp {
         mCentralGravity = false;
         mAllowPerlin	= false;
         mSaveFrames		= false;
+        mDisappear      = false;
         mSaveFrameCount = 0;
     }
 
@@ -76,6 +77,8 @@ namespace myapp {
             mAllowPerlin = ! mAllowPerlin;
         }else if( event.getChar() == '3'){
             writeImage( getHomeDirectory().string() + "Desktop/renders/images/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
+        }else if( event.getChar() == 'd' ){
+            mDisappear = ! mDisappear;
         }
     }
 
@@ -97,6 +100,9 @@ namespace myapp {
 
         if( mAllowPerlin )
             mParticleController.applyPerlin( mPerlin );
+
+        if( mDisappear )
+            mParticleController.disappear();
 
         mParticleController.update( mChannel, mMouseLoc );
     }

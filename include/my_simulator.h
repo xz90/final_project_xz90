@@ -67,6 +67,7 @@ public:
     bool mSaveFrames;
     bool mCentralGravity;
     bool mAllowPerlin;
+    bool mDisappear;
 
     int mSaveFrameCount;
     };

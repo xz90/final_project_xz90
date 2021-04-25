@@ -34,6 +34,8 @@ Particle::Particle( vec2 loc, vec2 vel )
     mAge			= 0;
     mLifespan		= Rand::randInt( 50, 250 );
     mIsDead			= false;
+
+    shouldDisappear = false;
 }
 
 void Particle::pullToCenter()
@@ -42,6 +44,14 @@ void Particle::pullToCenter()
     vec2 dirToCenter = mLoc - app::getWindowCenter();
     mVel -= dirToCenter * mMass * 0.025f;
 }
+
+
+void Particle::disappear() {
+    shouldDisappear = true;
+    mVel += vec2(0,-100);
+
+}
+
 
 void Particle::applyPerlin( const Perlin &perlin )
 {
@@ -58,6 +68,10 @@ void Particle::applyPerlin( const Perlin &perlin )
 
 void Particle::update( const Channel32f &channel, const vec2 &mouseLoc )
 {
+    if (shouldDisappear) {
+        mLoc += mVel;
+        return;
+    }
     // add velocity
     mVel += mAcc;
 

@@ -38,6 +38,11 @@ namespace myapp{
         void pullToCenter();
 
         /**
+         * pull the particle upwards by changing its velocity
+         */
+        void disappear();
+
+        /**
          * add perlin noise for particles
          * @param perlin the original perlin class
          */
@@ -69,6 +74,8 @@ namespace myapp{
         int	mAge;
         int	mLifespan;
         bool mIsDead;
+
+        bool shouldDisappear;
     };
 
 

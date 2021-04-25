@@ -50,6 +50,15 @@ void ParticleController::pullToCenter()
     }
 }
 
+void ParticleController::disappear() {
+    for( list<Particle>::iterator p = mParticles.begin(); p != mParticles.end(); ++p ){
+        p->disappear();
+//        p->mVel = vec2(10,-100);
+//        p->mAcc = vec2(0,-100);
+    }
+}
+
+
 void ParticleController::applyPerlin( const Perlin &perlin )
 {
     for( list<Particle>::iterator p = mParticles.begin(); p != mParticles.end(); ++p ){
@@ -112,4 +121,5 @@ void ParticleController::addDefaultParticles(int amt) {
     std::cout << mParticles.size() << std::endl;
 
 }
+
 
