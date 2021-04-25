@@ -48,7 +48,7 @@ void Particle::pullToCenter()
 
 void Particle::disappear() {
     shouldDisappear = true;
-    mVel += vec2(0,-100);
+//    mAcc = vec2(0,-100);
 
 }
 
@@ -69,6 +69,9 @@ void Particle::applyPerlin( const Perlin &perlin )
 void Particle::update( const Channel32f &channel, const vec2 &mouseLoc )
 {
     if (shouldDisappear) {
+        vec2 dirToCenter = mLoc - vec2(700,0);
+        mAcc = vec2(Rand::randFloat( -10.0f, 10.0f ),Rand::randFloat( -1000.0f, 0.0f )/dirToCenter[1]);
+        mVel += mAcc;
         mLoc += mVel;
         return;
     }
