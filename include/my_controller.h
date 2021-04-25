@@ -23,6 +23,7 @@ namespace myapp{
         void update( const ci::Channel32f &channel, const vec2 &mouseLoc );
         void draw();
         void addParticles( int amt, const vec2 &mouseLoc, const vec2 &mouseVel );
+        void addDefaultParticles( int amt );
         void removeParticles( int amt );
 
         std::list<Particle>	mParticles;

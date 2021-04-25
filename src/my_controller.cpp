@@ -97,3 +97,19 @@ void ParticleController::removeParticles( int amt )
     }
 }
 
+void ParticleController::addDefaultParticles(int amt) {
+    for( int i=0; i<amt; i++ )
+    {
+        vec2 mouseLoc = vec2(Rand::randFloat( 0.0f, 900.0f ),Rand::randFloat( 0.0f, 1100.0f ));
+        vec2 mouseVel = vec2(Rand::randFloat( -10.0f, 10.0f ),Rand::randFloat( -10.0f, 10.0f ));
+
+        vec2 loc = mouseLoc + Rand::randVec2() * Rand::randFloat( 5.0f );
+        vec2 velOffset = Rand::randVec2() * Rand::randFloat( 1.0f, 3.0f );
+        vec2 vel = mouseVel * 5.0f + velOffset;
+        mParticles.push_back( Particle( loc, vel ) );
+    }
+
+    std::cout << mParticles.size() << std::endl;
+
+}
+
