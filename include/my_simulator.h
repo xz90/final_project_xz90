@@ -16,6 +16,7 @@
 #include "cinder/app/App.h"
 #include "cinder/ImageIO.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/Capture.h"
 #include "cinder/Perlin.h"
 #include "cinder/Channel.h"
 #include "cinder/Vector.h"
@@ -25,7 +26,7 @@
 #define RESOLUTION 10
 #define NUM_PARTICLES_TO_SPAWN 15
 
-
+using namespace std;
 using namespace ci;
 using namespace ci::app;
 using std::stringstream;
@@ -50,12 +51,13 @@ public:
     void mouseDrag( MouseEvent event );
 
 
-
+    CaptureRef mCamera;
 
     Perlin mPerlin;
 
     Channel32f mChannel;
     gl::Texture2dRef mTexture;
+
 
     vec2 mMouseLoc;
     vec2 mMouseVel;

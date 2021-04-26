@@ -1,29 +1,21 @@
 //
 // Created by Owenz on 4/25/2021.
 //
-
+//#pragma comment (lib, "opencv_core248d.lib")
+//#pragma comment (lib, "opencv_highgui248d.lib")
+//#pragma comment (lib, "opencv_imgproc248d.lib")
+//#pragma comment (lib, "opencv_video248d.lib")
+//#pragma comment (lib, "opencv_features2d248d.lib")
 #pragma warning( disable : 4819 4003)
 #include "my_simulator.h"
-
-using myapp::MyApp;
-
-//void prepareSettings(MyApp::Settings* settings) {
-////    settings->setResizable(false);
-//    settings->setWindowSize( 900, 1100 );
-//    settings->setFrameRate( 30.0f );
-//}
-//
-//
-//// This line is a macro that expands into an "int main()" function.
-//CINDER_APP(MyApp, ci::app::RendererGl, prepareSettings);
-
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Capture.h"
 
-#include "C:\Download\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h"
+//#include "C:\Download\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h"
 
+using myapp::MyApp;
 using namespace ci;
 using namespace ci::app;
 

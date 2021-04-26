@@ -18,6 +18,16 @@ namespace myapp {
 
     void MyApp::setup()
     {
+        try{
+            mCamera = Capture::create( 640, 480 );
+            mCamera->start();
+        } catch( ... ) {
+            console() << "Could not initialize the capture" << endl;
+        }
+
+
+
+
         mPerlin = Perlin();
 
         mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg") );
@@ -85,6 +95,16 @@ namespace myapp {
 
     void MyApp::update()
     {
+        if( mCamera ){
+            if( mCamera->checkNewFrame() ){
+                auto img = *mCamera->getSurface();
+                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+//                mTexture = gl::Texture( mCamera.getSurface() );
+            }
+        }
+
+
+
 //        if( ! mChannel ) return;
 
         if( mIsPressed )
@@ -109,6 +129,14 @@ namespace myapp {
 
     void MyApp::draw()
     {
+        gl::clear( Color( 0, 0, 0 ) );
+        if( mTexture ){
+            gl::draw( mTexture, getWindowBounds() );
+        }
+
+
+
+
         gl::clear( Color( 0, 0, 0 ), true );
 
         if( mDrawImage ){
