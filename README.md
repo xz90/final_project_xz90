@@ -26,3 +26,25 @@ Fill this in before the final project deadline. Someone who has _no familiarity_
 
    *4.21 Wed:*
    1. Follow the tutorial make particles visualisation
+   
+   *4.22 Thu:*
+   1. Reconstruct game logic and looking for online materials
+
+
+2. **Week2 Log** (Time zone: UTC +8)
+   
+   *4.23 Fri:*
+   1. Modify particle effects on setup function 
+      
+   *4.24 Sat:*
+   1. Rest
+      
+   *4.25 Sun:*
+   1. Rest
+   
+   *4.26 Mon:*
+   1. Added disappearing effects
+   1. Change related variables
+   1. Try to connect to OpenCV
+   
+

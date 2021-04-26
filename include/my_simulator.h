@@ -30,6 +30,7 @@ using namespace ci;
 using namespace ci::app;
 using std::stringstream;
 
+
 namespace myapp {
 
 class MyApp : public ci::app::App{
@@ -70,6 +71,8 @@ public:
     bool mDisappear;
 
     int mSaveFrameCount;
+//    cv::Mat
+//    ocvCaptureApp app;
     };
 
 } // namespace myapp
