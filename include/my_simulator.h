@@ -12,10 +12,13 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "my_controller.h"
-#include "C:\Download\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h"
+//#include "C:\Download\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h"
 #include "cinder/app/App.h"
 #include "cinder/ImageIO.h"
 #include "cinder/gl/Texture.h"
+
+#include "C:/Download/Cinder/include/msw/videoInput/videoInput.h"
+
 #include "cinder/Capture.h"
 #include "cinder/Perlin.h"
 #include "cinder/Channel.h"
@@ -23,6 +26,7 @@
 #include "cinder/Utilities.h"
 #include "../include/my_controller.h"
 #include <sstream>
+
 #define RESOLUTION 10
 #define NUM_PARTICLES_TO_SPAWN 15
 
