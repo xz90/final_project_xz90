@@ -110,7 +110,7 @@ namespace myapp {
             mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
 
         if (getElapsedSeconds() < 10) {
-            mParticleController.addDefaultParticles(30);
+            mParticleController.addDefaultParticles(100);
         }
         mParticleController.repulseParticles();
 
