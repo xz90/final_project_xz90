@@ -98,12 +98,11 @@ namespace myapp {
         if( mCamera ){
             if( mCamera->checkNewFrame() ){
                 auto img = *mCamera->getSurface();
+                mChannel = Channel32f ( img );
                 mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-//                mTexture = gl::Texture( mCamera.getSurface() );
+
             }
         }
-
-
 
 //        if( ! mChannel ) return;
 
