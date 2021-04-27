@@ -45,7 +45,11 @@ Fill this in before the final project deadline. Someone who has _no familiarity_
    *4.26 Mon:*
    1. Added disappearing effects
    1. Change related variables
-   1. Try to connect to OpenCV
+   1. Make camera work
+
+   *4.27 Tue:*
+   1. Modifying variables
+   1. Trying to connect to OpenCV
    
    
 
