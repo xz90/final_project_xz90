@@ -18,12 +18,12 @@ namespace myapp {
 
     void MyApp::setup()
     {
-        try{
-            mCamera = Capture::create( 640, 480 );
-            mCamera->start();
-        } catch( ... ) {
-            console() << "Could not initialize the capture" << endl;
-        }
+//        try{
+//            mCamera = Capture::create( 640, 480 );
+//            mCamera->start();
+//        } catch( ... ) {
+//            console() << "Could not initialize the capture" << endl;
+//        }
 
 
 
@@ -95,14 +95,14 @@ namespace myapp {
 
     void MyApp::update()
     {
-        if( mCamera ){
-            if( mCamera->checkNewFrame() ){
-                auto img = *mCamera->getSurface();
-                mChannel = Channel32f ( img );
-                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-
-            }
-        }
+//        if( mCamera ){
+//            if( mCamera->checkNewFrame() ){
+//                auto img = *mCamera->getSurface();
+//                mChannel = Channel32f ( img );
+//                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+//
+//            }
+//        }
 
 //        if( ! mChannel ) return;
 
@@ -110,7 +110,7 @@ namespace myapp {
             mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
 
         if (getElapsedSeconds() < 10) {
-            mParticleController.addDefaultParticles(100);
+            mParticleController.addDefaultParticles(30);
         }
         mParticleController.repulseParticles();
 
@@ -128,10 +128,10 @@ namespace myapp {
 
     void MyApp::draw()
     {
-        gl::clear( Color( 0, 0, 0 ) );
-        if( mTexture ){
-            gl::draw( mTexture, getWindowBounds() );
-        }
+//        gl::clear( Color( 0, 0, 0 ) );
+//        if( mTexture ){
+//            gl::draw( mTexture, getWindowBounds() );
+//        }
 
 
 
