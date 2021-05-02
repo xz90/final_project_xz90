@@ -77,8 +77,7 @@ public:
     bool mDisappear;
 
     int mSaveFrameCount;
-//    cv::Mat
-//    ocvCaptureApp app;
+
     };
 
 } // namespace myapp

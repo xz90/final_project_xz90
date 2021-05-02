@@ -109,9 +109,9 @@ namespace myapp {
         if( mIsPressed )
             mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
 
-        if (getElapsedSeconds() < 10) {
-            mParticleController.addDefaultParticles(30);
-        }
+//        if (getElapsedSeconds() < 10) {
+//            mParticleController.addDefaultParticles(30);
+//        }
         mParticleController.repulseParticles();
 
         if( mCentralGravity )
