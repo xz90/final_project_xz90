@@ -19,7 +19,7 @@ namespace myapp {
     void MyApp2::setup()
     {
         try{
-            mCamera = Capture::create( 640, 480 );
+            mCamera = Capture::create( 1280, 960 );
             mCamera->start();
         } catch( ... ) {
             console() << "Could not initialize the capture" << endl;
@@ -35,10 +35,9 @@ namespace myapp {
         mPerlin = Perlin();
 
         mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\baymax.jpg") );
-//        mTexture = mChannel;
-        auto img = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg" );
+        auto img = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\baymax.jpg" );
         mTexture = gl::Texture2d::create( img );
-//        mTexture = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\baymax.jpg");
+
 
         mMouseLoc = vec2( 0, 0 );
         mMouseVel = vec2( 0, 0 );
@@ -75,38 +74,38 @@ namespace myapp {
 //        mouseMove( event );
 //    }
 //
-//    void MyApp2::keyDown( KeyEvent event )
-//    {
-//        if( event.getChar() == '1' ){
-//            mDrawImage = ! mDrawImage;
-//        } else if( event.getChar() == '2' ){
-//            mDrawParticles = ! mDrawParticles;
-//        }
-//
-//        if( event.getChar() == 's' ){
-//            mSaveFrames = ! mSaveFrames;
-//        } else if( event.getChar() == 'g' ){
-//            mCentralGravity = ! mCentralGravity;
-//        } else if( event.getChar() == 'p' ){
-//            mAllowPerlin = ! mAllowPerlin;
-//        }else if( event.getChar() == '3'){
-//            writeImage( getHomeDirectory().string() + "Desktop/renders/images/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
-//        }else if( event.getChar() == 'd' ){
-//            mDisappear = ! mDisappear;
-//        }
-//    }
+    void MyApp2::keyDown( KeyEvent event )
+    {
+        if( event.getChar() == '1' ){
+            mDrawImage = ! mDrawImage;
+        } else if( event.getChar() == '2' ){
+            mDrawParticles = ! mDrawParticles;
+        }
+
+        if( event.getChar() == 's' ){
+            mSaveFrames = ! mSaveFrames;
+        } else if( event.getChar() == 'g' ){
+            mCentralGravity = ! mCentralGravity;
+        } else if( event.getChar() == 'p' ){
+            mAllowPerlin = ! mAllowPerlin;
+        }else if( event.getChar() == '3'){
+            writeImage( getHomeDirectory().string() + "Desktop/renders/images/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
+        }else if( event.getChar() == 'd' ){
+            mDisappear = ! mDisappear;
+        }
+    }
 
 
     void MyApp2::update()
     {
-//        if( mCamera ){
-//            if( mCamera->checkNewFrame() ){
-//                auto img = *mCamera->getSurface();
-//                mChannel = Channel32f ( img );
-//                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-//
-//            }
-//        }
+        if( mCamera ){
+            if( mCamera->checkNewFrame() ){
+                auto img = *mCamera->getSurface();
+                mChannel = Channel32f ( img );
+                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+
+            }
+        }
 
 //        if( ! mChannel ) return;
 

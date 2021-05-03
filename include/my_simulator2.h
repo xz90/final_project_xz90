@@ -48,7 +48,7 @@ public:
     void setup() override;
 
 
-//    void keyDown(KeyEvent event);
+    void keyDown(KeyEvent event);
 //    void mouseDown( MouseEvent event );
 //    void mouseUp( MouseEvent event );
 //    void mouseMove( MouseEvent event );

@@ -8,7 +8,7 @@ using myapp::MyApp2;
 
 void prepareSettings(MyApp2::Settings* settings) {
 //    settings->setResizable(false);
-    settings->setWindowSize( 800, 600 );
+    settings->setWindowSize( 1280, 700 );
     settings->setFrameRate( 30.0f );
 }
 

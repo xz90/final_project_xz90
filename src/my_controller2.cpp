@@ -13,8 +13,8 @@ using std::list;
 
 ParticleController2::ParticleController2()
 {
-    for( int y=0; y<60; y++ ){
-        for( int x=0; x<80; x++ ){
+    for( int y=0; y<96; y++ ){
+        for( int x=0; x<128; x++ ){
             addParticle( x, y );
         }
     }
