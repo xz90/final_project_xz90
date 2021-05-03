@@ -107,19 +107,33 @@ void ParticleController::removeParticles( int amt )
 }
 
 void ParticleController::addDefaultParticles(int amt) {
-    for( int i=0; i<amt; i++ )
-    {
-        vec2 mouseLoc = vec2(Rand::randFloat( 0.0f, 900.0f ),Rand::randFloat( 0.0f, 1100.0f ));
-        vec2 mouseVel = vec2(Rand::randFloat( -10.0f, 10.0f ),Rand::randFloat( -10.0f, 10.0f ));
 
-        vec2 loc = mouseLoc + Rand::randVec2() * Rand::randFloat( 5.0f );
-        vec2 velOffset = Rand::randVec2() * Rand::randFloat( 1.0f, 3.0f );
-        vec2 vel = mouseVel * 5.0f + velOffset;
-        mParticles.push_back( Particle( loc, vel ) );
+    for( int y=0; y<960; y++ ){
+        for( int x=0; x<1280; x++ ){
+            addDefaultParticleHelper( x, y );
+        }
     }
 
-    std::cout << mParticles.size() << std::endl;
+//    for( int i=0; i<amt; i++ )
+//    {
+//        vec2 mouseLoc = vec2(Rand::randFloat( 0.0f, 900.0f ),Rand::randFloat( 0.0f, 1100.0f ));
+//        vec2 mouseVel = vec2(Rand::randFloat( -10.0f, 10.0f ),Rand::randFloat( -10.0f, 10.0f ));
+//
+//        vec2 loc = mouseLoc + Rand::randVec2() * Rand::randFloat( 5.0f );
+//        vec2 velOffset = Rand::randVec2() * Rand::randFloat( 1.0f, 3.0f );
+//        vec2 vel = mouseVel * 5.0f + velOffset;
+//        mParticles.push_back( Particle( loc, vel ) );
+//    }
+//
+//    std::cout << mParticles.size() << std::endl;
 
+
+}
+
+void ParticleController::addDefaultParticleHelper( int xi, int yi ) {
+    float x = ( xi + 0.5f ) * 10.0f;
+    float y = ( yi + 0.5f ) * 10.0f;
+    mParticles.push_back( Particle( vec2( x, y ), vec2(0,0) ) );
 }
 
 

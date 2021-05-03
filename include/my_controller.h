@@ -29,6 +29,8 @@ namespace myapp{
         std::list<Particle>	mParticles;
 
         void disappear();
+
+        void addDefaultParticleHelper(int xi, int yi);
     };
 
 

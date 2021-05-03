@@ -18,22 +18,26 @@ namespace myapp {
 
     void MyApp2::setup()
     {
-//        try{
-//            mCamera = Capture::create( 640, 480 );
-//            mCamera->start();
-//        } catch( ... ) {
-//            console() << "Could not initialize the capture" << endl;
-//        }
+        try{
+            mCamera = Capture::create( 640, 480 );
+            mCamera->start();
+        } catch( ... ) {
+            console() << "Could not initialize the capture" << endl;
+        }
+
+
+
+//        mParticleController.addDefaultParticles(9);
 
 
 
 
         mPerlin = Perlin();
 
-        mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg") );
+//        mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg") );
 //        mTexture = mChannel;
-        auto img = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg" );
-        mTexture = gl::Texture2d::create( img );
+//        auto img = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg" );
+//        mTexture = gl::Texture2d::create( img );
 //        mTexture = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image.jpg");
 
         mMouseLoc = vec2( 0, 0 );
@@ -95,14 +99,14 @@ namespace myapp {
 
     void MyApp2::update()
     {
-//        if( mCamera ){
-//            if( mCamera->checkNewFrame() ){
-//                auto img = *mCamera->getSurface();
-//                mChannel = Channel32f ( img );
-//                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-//
-//            }
-//        }
+        if( mCamera ){
+            if( mCamera->checkNewFrame() ){
+                auto img = *mCamera->getSurface();
+                mChannel = Channel32f ( img );
+                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+
+            }
+        }
 
 //        if( ! mChannel ) return;
 
@@ -128,10 +132,10 @@ namespace myapp {
 
     void MyApp2::draw()
     {
-//        gl::clear( Color( 0, 0, 0 ) );
-//        if( mTexture ){
-//            gl::draw( mTexture, getWindowBounds() );
-//        }
+        gl::clear( Color( 0, 0, 0 ) );
+        if( mTexture ){
+            gl::draw( mTexture, getWindowBounds() );
+        }
 
 
 
