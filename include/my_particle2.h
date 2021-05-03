@@ -16,7 +16,8 @@
 using glm::vec2;
 namespace myapp{
     class Particle2 {
-        Particle( vec2 );
+        Particle2();
+        Particle2( vec2 );
         void update();
         void draw();
         vec2 mLoc;
