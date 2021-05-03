@@ -24,7 +24,7 @@
 #include "cinder/Channel.h"
 #include "cinder/Vector.h"
 #include "cinder/Utilities.h"
-#include "../include/my_controller.h"
+#include "../include/my_controller2.h"
 #include <sstream>
 
 #define RESOLUTION 10
@@ -48,11 +48,11 @@ public:
     void setup() override;
 
 
-    void keyDown(KeyEvent event);
-    void mouseDown( MouseEvent event );
-    void mouseUp( MouseEvent event );
-    void mouseMove( MouseEvent event );
-    void mouseDrag( MouseEvent event );
+//    void keyDown(KeyEvent event);
+//    void mouseDown( MouseEvent event );
+//    void mouseUp( MouseEvent event );
+//    void mouseMove( MouseEvent event );
+//    void mouseDrag( MouseEvent event );
 
 
     CaptureRef mCamera;
@@ -67,7 +67,7 @@ public:
     vec2 mMouseVel;
     bool mIsPressed;
 
-    ParticleController mParticleController;
+    ParticleController2 mParticleController;
 
     bool mDrawParticles;
     bool mDrawImage;

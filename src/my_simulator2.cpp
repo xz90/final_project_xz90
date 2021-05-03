@@ -3,7 +3,7 @@
 //
 
 #include "../include/my_simulator2.h"
-#include "my_simulator.h"
+//#include "my_simulator.h"
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
 
@@ -25,7 +25,7 @@ namespace myapp {
             console() << "Could not initialize the capture" << endl;
         }
 
-
+        ParticleController m;
 
 //        mParticleController.addDefaultParticles(9);
 
@@ -54,47 +54,47 @@ namespace myapp {
     }
 
 
-    void MyApp2::mouseDown( MouseEvent event )
-    {
-        mIsPressed = true;
-    }
-
-    void MyApp2::mouseUp( MouseEvent event )
-    {
-        mIsPressed = false;
-    }
-
-    void MyApp2::mouseMove( MouseEvent event )
-    {
-        mMouseVel = ( vec2(event.getPos()) - mMouseLoc );
-        mMouseLoc = event.getPos();
-    }
-
-    void MyApp2::mouseDrag( MouseEvent event )
-    {
-        mouseMove( event );
-    }
-
-    void MyApp2::keyDown( KeyEvent event )
-    {
-        if( event.getChar() == '1' ){
-            mDrawImage = ! mDrawImage;
-        } else if( event.getChar() == '2' ){
-            mDrawParticles = ! mDrawParticles;
-        }
-
-        if( event.getChar() == 's' ){
-            mSaveFrames = ! mSaveFrames;
-        } else if( event.getChar() == 'g' ){
-            mCentralGravity = ! mCentralGravity;
-        } else if( event.getChar() == 'p' ){
-            mAllowPerlin = ! mAllowPerlin;
-        }else if( event.getChar() == '3'){
-            writeImage( getHomeDirectory().string() + "Desktop/renders/images/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
-        }else if( event.getChar() == 'd' ){
-            mDisappear = ! mDisappear;
-        }
-    }
+//    void MyApp2::mouseDown( MouseEvent event )
+//    {
+//        mIsPressed = true;
+//    }
+//
+//    void MyApp2::mouseUp( MouseEvent event )
+//    {
+//        mIsPressed = false;
+//    }
+//
+//    void MyApp2::mouseMove( MouseEvent event )
+//    {
+//        mMouseVel = ( vec2(event.getPos()) - mMouseLoc );
+//        mMouseLoc = event.getPos();
+//    }
+//
+//    void MyApp2::mouseDrag( MouseEvent event )
+//    {
+//        mouseMove( event );
+//    }
+//
+//    void MyApp2::keyDown( KeyEvent event )
+//    {
+//        if( event.getChar() == '1' ){
+//            mDrawImage = ! mDrawImage;
+//        } else if( event.getChar() == '2' ){
+//            mDrawParticles = ! mDrawParticles;
+//        }
+//
+//        if( event.getChar() == 's' ){
+//            mSaveFrames = ! mSaveFrames;
+//        } else if( event.getChar() == 'g' ){
+//            mCentralGravity = ! mCentralGravity;
+//        } else if( event.getChar() == 'p' ){
+//            mAllowPerlin = ! mAllowPerlin;
+//        }else if( event.getChar() == '3'){
+//            writeImage( getHomeDirectory().string() + "Desktop/renders/images/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
+//        }else if( event.getChar() == 'd' ){
+//            mDisappear = ! mDisappear;
+//        }
+//    }
 
 
     void MyApp2::update()
@@ -110,37 +110,45 @@ namespace myapp {
 
 //        if( ! mChannel ) return;
 
-        if( mIsPressed )
-            mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
+//        if( mIsPressed )
+//            mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
 
 //        if (getElapsedSeconds() < 10) {
 //            mParticleController.addDefaultParticles(30);
 //        }
-        mParticleController.repulseParticles();
-
-        if( mCentralGravity )
-            mParticleController.pullToCenter();
-
-        if( mAllowPerlin )
-            mParticleController.applyPerlin( mPerlin );
-
-        if( mDisappear )
-            mParticleController.disappear();
-
-        mParticleController.update( mChannel, mMouseLoc );
+//        mParticleController.repulseParticles();
+//
+//        if( mCentralGravity )
+//            mParticleController.pullToCenter();
+//
+//        if( mAllowPerlin )
+//            mParticleController.applyPerlin( mPerlin );
+//
+//        if( mDisappear )
+//            mParticleController.disappear();
+//
+//        mParticleController.update( mChannel, mMouseLoc );
     }
 
     void MyApp2::draw()
     {
-        gl::clear( Color( 0, 0, 0 ) );
-        if( mTexture ){
-            gl::draw( mTexture, getWindowBounds() );
-        }
+//        gl::clear( Color( 0, 0, 0 ) );
+//        if( mTexture ){
+//            gl::draw( mTexture, getWindowBounds() );
+//        }
 
 
 
 
         gl::clear( Color( 0, 0, 0 ), true );
+        if( mDrawParticles ){
+            glDisable( GL_TEXTURE_2D );
+            mParticleController.draw();
+        }
+
+
+
+
 
         if( mDrawImage ){
 //            mTexture.enableAndBind();
@@ -148,10 +156,7 @@ namespace myapp {
             gl::draw( mTexture, getWindowBounds() );
         }
 
-        if( mDrawParticles ){
-            glDisable( GL_TEXTURE_2D );
-            mParticleController.draw();
-        }
+
 
         if( mSaveFrames ){
             writeImage( getHomeDirectory().string() + "Desktop/renders/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());

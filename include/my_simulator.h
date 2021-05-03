@@ -24,7 +24,7 @@
 #include "cinder/Channel.h"
 #include "cinder/Vector.h"
 #include "cinder/Utilities.h"
-#include "../include/my_controller.h"
+#include "../include/my_controller2.h"
 #include <sstream>
 
 #define RESOLUTION 10

@@ -16,6 +16,7 @@
 using glm::vec2;
 namespace myapp{
     class Particle2 {
+    public:
         Particle2();
         Particle2( vec2 );
         void update();

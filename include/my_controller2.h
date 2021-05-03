@@ -1,27 +1,38 @@
 //
 // Created by Owenz on 5/3/2021.
 //
+#pragma warning( disable : 4819 )
 #pragma once
-#include ".h"
-#include <list>
+
 #ifndef FINAL_PROJECT_XZ90_MY_CONTROLLER2_H
 #define FINAL_PROJECT_XZ90_MY_CONTROLLER2_H
 
+#include "cinder\gl\gl.h"
+#include "cinder/Channel.h"
+#include "../include/my_particle2.h"
+#include "cinder/Perlin.h"
+#include <list>
 
-class my_controller2 {
-
-};
 
 
+namespace myapp {
+    class ParticleController2 {
+    public:
+        ParticleController2();
+        void update();
+        void draw();
+        void addParticles( int amt );
+        void removeParticles( int amt );
+        std::list<Particle2> mParticles2;
 
-class ParticleController {
-public:
-    ParticleController();
-    void update();
-    void draw();
-    void addParticles( int amt );
-    void removeParticles( int amt );
-    std::list<Particle> mParticles;
-};
+        void addParticle(int xi, int yi);
+    };
+
+
+
+
+
+}// namespace myapp
+
 
 #endif //FINAL_PROJECT_XZ90_MY_CONTROLLER2_H

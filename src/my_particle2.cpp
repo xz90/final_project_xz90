@@ -19,7 +19,7 @@ Particle2::Particle2( vec2 loc)
     // variables for location, velocity and acceleration
     mLoc			= loc;
     mVel			= vec2(0,0);
-    mRadius			= 5.0f;
+    mRadius			= 4.0f;
 }
 
 void Particle2::update() {
