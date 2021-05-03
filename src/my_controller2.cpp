@@ -41,3 +41,11 @@ void ParticleController2::addParticle( int xi, int yi ) {
     float y = ( yi + 0.5f ) * 10.0f;
     mParticles2.push_back( Particle2( vec2( x, y ) ) );
 }
+
+void ParticleController2::disappear() {
+    for( list<Particle2>::iterator p = mParticles2.begin(); p != mParticles2.end(); ++p ){
+        p->disappear();
+//        p->mVel = vec2(10,-100);
+//        p->mAcc = vec2(0,-100);
+    }
+}

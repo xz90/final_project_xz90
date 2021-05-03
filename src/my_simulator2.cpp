@@ -78,19 +78,11 @@ namespace myapp {
     {
         if( event.getChar() == '1' ){
             mDrawImage = ! mDrawImage;
-        } else if( event.getChar() == '2' ){
-            mDrawParticles = ! mDrawParticles;
         }
 
         if( event.getChar() == 's' ){
             mSaveFrames = ! mSaveFrames;
-        } else if( event.getChar() == 'g' ){
-            mCentralGravity = ! mCentralGravity;
-        } else if( event.getChar() == 'p' ){
-            mAllowPerlin = ! mAllowPerlin;
-        }else if( event.getChar() == '3'){
-            writeImage( getHomeDirectory().string() + "Desktop/renders/images/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
-        }else if( event.getChar() == 'd' ){
+        } else if( event.getChar() == 'd' ){
             mDisappear = ! mDisappear;
         }
     }
@@ -123,8 +115,8 @@ namespace myapp {
 //        if( mAllowPerlin )
 //            mParticleController.applyPerlin( mPerlin );
 //
-//        if( mDisappear )
-//            mParticleController.disappear();
+        if( mDisappear )
+            mParticleController.disappear();
 //
         mParticleController.update( mChannel );
     }

@@ -26,6 +26,7 @@ namespace myapp {
         std::list<Particle2> mParticles2;
 
         void addParticle(int xi, int yi);
+        void disappear();
     };
 
 

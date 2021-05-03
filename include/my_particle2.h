@@ -24,6 +24,8 @@ namespace myapp{
         vec2 mLoc;
         vec2 mVel;
         float mRadius;
+        void disappear();
+        bool shouldDisappear;
     };
 } // namespace myapp
 
