@@ -20,9 +20,9 @@ ParticleController2::ParticleController2()
     }
 }
 
-void ParticleController2::update() {
+void ParticleController2::update(const ci::Channel32f &channel) {
     for( list<Particle2>::iterator p = mParticles2.begin(); p != mParticles2.end(); ++p ){
-        p->update();
+        p->update(channel);
     }
 }
 

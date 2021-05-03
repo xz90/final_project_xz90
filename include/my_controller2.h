@@ -19,7 +19,7 @@ namespace myapp {
     class ParticleController2 {
     public:
         ParticleController2();
-        void update();
+        void update(const ci::Channel32f &channel);
         void draw();
         void addParticles( int amt );
         void removeParticles( int amt );

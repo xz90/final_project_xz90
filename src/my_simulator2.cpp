@@ -34,11 +34,11 @@ namespace myapp {
 
         mPerlin = Perlin();
 
-//        mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg") );
+        mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\baymax.jpg") );
 //        mTexture = mChannel;
-//        auto img = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg" );
-//        mTexture = gl::Texture2d::create( img );
-//        mTexture = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image.jpg");
+        auto img = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\image1.jpg" );
+        mTexture = gl::Texture2d::create( img );
+//        mTexture = loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\baymax.jpg");
 
         mMouseLoc = vec2( 0, 0 );
         mMouseVel = vec2( 0, 0 );
@@ -99,14 +99,14 @@ namespace myapp {
 
     void MyApp2::update()
     {
-        if( mCamera ){
-            if( mCamera->checkNewFrame() ){
-                auto img = *mCamera->getSurface();
-                mChannel = Channel32f ( img );
-                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-
-            }
-        }
+//        if( mCamera ){
+//            if( mCamera->checkNewFrame() ){
+//                auto img = *mCamera->getSurface();
+//                mChannel = Channel32f ( img );
+//                mTexture = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+//
+//            }
+//        }
 
 //        if( ! mChannel ) return;
 
@@ -127,7 +127,7 @@ namespace myapp {
 //        if( mDisappear )
 //            mParticleController.disappear();
 //
-//        mParticleController.update( mChannel, mMouseLoc );
+        mParticleController.update( mChannel );
     }
 
     void MyApp2::draw()
@@ -141,10 +141,14 @@ namespace myapp {
 
 
         gl::clear( Color( 0, 0, 0 ), true );
-        if( mDrawParticles ){
-            glDisable( GL_TEXTURE_2D );
-            mParticleController.draw();
-        }
+        mParticleController.draw();
+
+
+
+//        if( mDrawParticles ){
+//            glDisable( GL_TEXTURE_2D );
+//            mParticleController.draw();
+//        }
 
 
 

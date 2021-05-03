@@ -19,7 +19,7 @@ namespace myapp{
     public:
         Particle2();
         Particle2( vec2 );
-        void update();
+        void update(const ci::Channel32f &channel);
         void draw();
         vec2 mLoc;
         vec2 mVel;

@@ -22,8 +22,12 @@ Particle2::Particle2( vec2 loc)
     mRadius			= 4.0f;
 }
 
-void Particle2::update() {
-    mLoc += mVel;
+//void Particle2::update() {
+//    mLoc += mVel;
+//}
+void Particle2::update( const Channel32f &channel ) {
+    float gray = channel.getValue( mLoc );
+    mRadius = channel.getValue( mLoc ) * 7.0f;
 }
 
 void Particle2::draw() {
