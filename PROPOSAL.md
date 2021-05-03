@@ -6,7 +6,8 @@
    1. Make creative coding using particles. [Sample: [Cinder Example](https://www.youtube.com/watch?v=Fx3hTgrOyFg)]
    1. Use external library to detect people's face and re-constructit using many particles
    1. Design effects that people's faces are "disappearing"[People disappeared at the end of movie *Avengers*: [Effect Demo](https://www.youtube.com/watch?v=dFomwoVngOI)]
-   1. Make it people's face movable and the program can detect it continuously (Using *OpenCV*)
+   1. Make it people's face movable and the program can detect it continuously ~~(Using *OpenCV*)~~
+   1. **Modification: using capture library and related material to design a filter using particles**
 
 
 2. **What Background do I have**
@@ -24,7 +25,8 @@
 4. **Timeline**
     1. By the end of Week1, I will have implemented particles based on human faces
     1. By the end of Week2, I will have implemented special effects and start working on connect it with OpenCV functions
-    1. By the end of Week3, I will have implemented OpenCV functions and make the whole project runnable
+    1. ~~By the end of Week3, I will have implemented OpenCV functions and make the whole project runnable~~
+   1. **Modification based on project progress: By the end of Week3, I will implemented second app (mosaic filter based on particles).**
 
 
 5. **Stretch Goals**
@@ -36,3 +38,4 @@
 6. **External Libraries**
     1. Cinder OpenCV to detect human face
     1. Cinder Geometry Geometric functions to make the particle effects
+   
