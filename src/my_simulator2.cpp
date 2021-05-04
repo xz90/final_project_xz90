@@ -27,11 +27,6 @@ namespace myapp {
 
         ParticleController m;
 
-//        mParticleController.addDefaultParticles(9);
-
-
-
-
         mPerlin = Perlin();
 
         mChannel = Channel32f ( loadImage("C:\\Download\\Cinder\\my-projects\\final-project-xz90\\src\\baymax.jpg") );
@@ -52,28 +47,6 @@ namespace myapp {
         mSaveFrameCount = 0;
     }
 
-
-//    void MyApp2::mouseDown( MouseEvent event )
-//    {
-//        mIsPressed = true;
-//    }
-//
-//    void MyApp2::mouseUp( MouseEvent event )
-//    {
-//        mIsPressed = false;
-//    }
-//
-//    void MyApp2::mouseMove( MouseEvent event )
-//    {
-//        mMouseVel = ( vec2(event.getPos()) - mMouseLoc );
-//        mMouseLoc = event.getPos();
-//    }
-//
-//    void MyApp2::mouseDrag( MouseEvent event )
-//    {
-//        mouseMove( event );
-//    }
-//
     void MyApp2::keyDown( KeyEvent event )
     {
         if( event.getChar() == '1' ){
@@ -99,51 +72,16 @@ namespace myapp {
             }
         }
 
-//        if( ! mChannel ) return;
-
-//        if( mIsPressed )
-//            mParticleController.addParticles( NUM_PARTICLES_TO_SPAWN, mMouseLoc, mMouseVel );
-
-//        if (getElapsedSeconds() < 10) {
-//            mParticleController.addDefaultParticles(30);
-//        }
-//        mParticleController.repulseParticles();
-//
-//        if( mCentralGravity )
-//            mParticleController.pullToCenter();
-//
-//        if( mAllowPerlin )
-//            mParticleController.applyPerlin( mPerlin );
-//
         if( mDisappear )
             mParticleController.disappear();
-//
+
         mParticleController.update( mChannel );
     }
 
     void MyApp2::draw()
     {
-//        gl::clear( Color( 0, 0, 0 ) );
-//        if( mTexture ){
-//            gl::draw( mTexture, getWindowBounds() );
-//        }
-
-
-
-
         gl::clear( Color( 0, 0, 0 ), true );
         mParticleController.draw();
-
-
-
-//        if( mDrawParticles ){
-//            glDisable( GL_TEXTURE_2D );
-//            mParticleController.draw();
-//        }
-
-
-
-
 
         if( mDrawImage ){
 //            mTexture.enableAndBind();
@@ -151,11 +89,8 @@ namespace myapp {
             gl::draw( mTexture, getWindowBounds() );
         }
 
-
-
         if( mSaveFrames ){
             writeImage( getHomeDirectory().string() + "Desktop/renders/image_" + toString( getElapsedFrames() ) + ".png",copyWindowSurface());
-
         }
     }
 

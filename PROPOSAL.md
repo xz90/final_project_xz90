@@ -36,6 +36,7 @@
    
  
 6. **External Libraries**
-    1. Cinder OpenCV to detect human face
+    1. ~~Cinder OpenCV to detect human face~~
     1. Cinder Geometry Geometric functions to make the particle effects
+    1. Capture library to use camera
    

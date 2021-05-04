@@ -15,16 +15,38 @@
 
 using glm::vec2;
 namespace myapp{
+    /**
+     * particle2 class
+     */
     class Particle2 {
     public:
+        /**
+         * Default constructor
+         */
         Particle2();
+
+        /**
+         * vec2 represents its location
+         */
         Particle2( vec2 );
+
+        /**
+         * update function to change the scene
+         * @param channel the picture channel
+         */
         void update(const ci::Channel32f &channel);
+
         void draw();
+
         vec2 mLoc;
         vec2 mVel;
         float mRadius;
+
+        /**
+         * disappear function
+         */
         void disappear();
+
         bool shouldDisappear;
     };
 } // namespace myapp

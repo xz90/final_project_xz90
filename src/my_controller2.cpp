@@ -45,7 +45,5 @@ void ParticleController2::addParticle( int xi, int yi ) {
 void ParticleController2::disappear() {
     for( list<Particle2>::iterator p = mParticles2.begin(); p != mParticles2.end(); ++p ){
         p->disappear();
-//        p->mVel = vec2(10,-100);
-//        p->mAcc = vec2(0,-100);
     }
 }
