@@ -10,6 +10,8 @@ ReadMe File
    1. May need to change absolute path depending on the PC
    1. run two application in apps folder
 
+* Video demo: https://youtu.be/3d94nCH5cv0
+
 
    
 
